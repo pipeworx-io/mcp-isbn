@@ -1,0 +1,34 @@
+[
+  {
+    "name": "validate_isbn",
+    "description": "Validate an ISBN-10 or ISBN-13 (keyless, offline): detects the format and checks the check digit (ISBN-10 uses mod-11 with an \"X\" for 10). Hyphens/spaces ignored. Validates the number, not the book.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string",
+          "description": "An ISBN-10 or ISBN-13, e.g. \"978-0-306-40615-7\"."
+        }
+      },
+      "required": [
+        "isbn"
+      ]
+    }
+  },
+  {
+    "name": "convert_isbn",
+    "description": "Convert an ISBN between ISBN-10 and ISBN-13 (recomputing the check digit). ISBN-10 -> ISBN-13 prefixes \"978\"; ISBN-13 -> ISBN-10 works only for the 978 prefix.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string",
+          "description": "The ISBN to convert."
+        }
+      },
+      "required": [
+        "isbn"
+      ]
+    }
+  }
+]
